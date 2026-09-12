@@ -1,1 +1,1 @@
-Primero projeto em java fazendo uma calculaodora com inerface gráfica (GUI).
+Primero projeto fazendo uma calculaodora com inerface gráfica (GUI) apenas usando Java.
