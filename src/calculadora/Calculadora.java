@@ -85,12 +85,21 @@ public class Calculadora {
 
                     }
                     else {
+                        if (valorBotao == ".") {
 
+                        }
+                        else if ("0123456789".contains(valorBotao)) {
+                            if (label.getText() == "0") {
+                                label.setText(valorBotao);
+                            }
+                            else {
+                                label.setText(label.getText() + valorBotao);
+                            }
+                        }
                     }
                 }
-            })
+            });
         }
         frame.setVisible(true);
     }
-
 }
