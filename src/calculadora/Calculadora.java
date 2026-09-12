@@ -92,7 +92,9 @@ public class Calculadora {
                             label.setText("0");
                         }
                         else if (valorBotao == "+/-") {
-
+                            double numdisplay = Double.parseDouble(label.getText());
+                            numdisplay *= -1;
+                            label.setText(removedecimalzero(numdisplay));
                         }
                         else if (valorBotao == "%") {
 
@@ -123,5 +125,12 @@ public class Calculadora {
         A = "0";
         operador = null;
         B = null;
+    }
+
+    String removedecimalzero(double numdisplay) {
+        if (numdisplay % 1 == 0) {
+            return Integer.toString((int) numdisplay);
+        }
+        return Double.toString(numdisplay);
     }
 }
