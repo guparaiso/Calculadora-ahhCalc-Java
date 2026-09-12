@@ -31,6 +31,11 @@ public class Calculadora {
     JPanel panel = new JPanel();
     JPanel panelbotoes = new JPanel();
 
+    // A+B, A-B, A*B, A/B
+    String A = "0";
+    String operador = null;
+    String B = null;
+
     public Calculadora() {
         frame.setSize(largura, altura);
         frame.setLocationRelativeTo(null);
@@ -82,11 +87,22 @@ public class Calculadora {
 
                     }
                     else if (Arrays.asList(simbolotopo).contains(valorBotao)) {
+                        if (valorBotao == "AC") {
+                            clearAll();
+                            label.setText("0");
+                        }
+                        else if (valorBotao == "+/-") {
 
+                        }
+                        else if (valorBotao == "%") {
+
+                        }
                     }
                     else {
                         if (valorBotao == ".") {
-
+                            if (!label.getText().contains(valorBotao)) {
+                                label.setText(label.getText() + valorBotao);
+                            }
                         }
                         else if ("0123456789".contains(valorBotao)) {
                             if (label.getText() == "0") {
@@ -101,5 +117,11 @@ public class Calculadora {
             });
         }
         frame.setVisible(true);
+    }
+
+    public void clearAll() {
+        A = "0";
+        operador = null;
+        B = null;
     }
 }
