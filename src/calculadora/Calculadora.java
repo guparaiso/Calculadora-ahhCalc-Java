@@ -84,7 +84,35 @@ public class Calculadora {
                     JButton botao = (JButton) e.getSource();
                     String valorBotao = botao.getText();
                     if (Arrays.asList(simbolodireita).contains(valorBotao)) {
+                        if (valorBotao == "=") {
+                            if (A != null) {
+                                B = label.getText();
+                                double numA = Double.parseDouble(A);
+                                double numB = Double.parseDouble(B);
 
+                                if (operador == "+") {
+                                    label.setText(removedecimalzero(numA+numB));
+                                }
+                                else if (operador == "-") {
+                                    label.setText(removedecimalzero(numA-numB));
+                                }
+                                else if (operador == "×") {
+                                    label.setText(removedecimalzero(numA*numB));
+                                }
+                                else if (operador == "÷") {
+                                    label.setText(removedecimalzero(numA/numB));
+                                }
+                                clearAll();
+                            }
+                        }
+                        else if ("+-×÷".contains(valorBotao)) {
+                            if (operador == null) {
+                                A = label.getText();
+                                label.setText("0");
+                                B = "0";
+                            }
+                            operador = valorBotao;
+                        }
                     }
                     else if (Arrays.asList(simbolotopo).contains(valorBotao)) {
                         if (valorBotao == "AC") {
