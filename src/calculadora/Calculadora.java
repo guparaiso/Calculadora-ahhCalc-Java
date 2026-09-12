@@ -97,7 +97,9 @@ public class Calculadora {
                             label.setText(removedecimalzero(numdisplay));
                         }
                         else if (valorBotao == "%") {
-
+                            double numdisplay = Double.parseDouble(label.getText());
+                            numdisplay /= 100;
+                            label.setText(removedecimalzero(numdisplay));
                         }
                     }
                     else {
