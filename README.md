@@ -9,7 +9,7 @@ Uma calculadora com interface gráfica feita em Java puro, usando Swing. Visual 
 - Cálculo de porcentagem (%)
 - Botão "AC" para limpar tudo
 - Remoção automática de casas decimais desnecessárias (ex: `4.0` vira `4`)
-- Botão de raiz quadrada (√) já está na interface — lógica ainda em desenvolvimento
+- Botão de raiz quadrada (√)
 
 ## Tecnologias
 
