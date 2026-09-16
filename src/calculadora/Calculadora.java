@@ -14,7 +14,7 @@ public class Calculadora {
     Color cinzaclaro = new Color(212, 212, 210);
     Color cinzaescuro = new Color(80, 80, 80);
     Color preto = new Color(28, 28, 28);
-    Color laranja = new Color(255, 149, 0);
+    Color laranja = new Color(0, 149, 0);
 
     String[] valorBotoes = {
             "AC", "+/-", "%", "÷",
@@ -135,6 +135,11 @@ public class Calculadora {
                             if (!label.getText().contains(valorBotao)) {
                                 label.setText(label.getText() + valorBotao);
                             }
+                        }
+                        else if (valorBotao == "√") {
+                            double numdisplay = Double.parseDouble(label.getText());
+                            numdisplay = Math.pow(numdisplay, 0.5);
+                            label.setText(removedecimalzero(numdisplay));
                         }
                         else if ("0123456789".contains(valorBotao)) {
                             if (label.getText() == "0") {
